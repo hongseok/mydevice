@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "logVersion": 10,
+    "logVersion": 11,
     "variables": [
         {
           "function":"__ai",
@@ -32,30 +32,14 @@
     ],
     "tags": [
         {
-          "function":"__fm",
-          "consent":["list"],
+          "type": "ace",
+          "ace_serverUrl": "",
+          "ace_appName": "",
+          "ace_useDeviceId": true,
+          "ace_useBundleShoreVersion": true,
+          "function":"__adj",
           "once_per_event":true,
-          "vtp_dropParamTable":["list",["map","dropParamKey","DROP_KEY_1"]],
-          "vtp_overrideEventName":"MODIFY_EVENT_NAME",
-          "vtp_editParamTable":["list",
-            ["map","editParamKey","ADD_KEY_1","editParamValue","ADD_VALUE_1"],
-            ["map","editParamKey",["macro",2],"editParamValue","ADD_VALUE_2"],
-            ["map","editParamKey","ADD_KEY_3","editParamValue",["macro",3]]],
-          "vtp_action":"filter",
-          "tag_id":4
-        },
-        {
-          "function":"__fm",
-          "once_per_event":true,
-          "vtp_mergeEventParameters":false,
-          "vtp_editParamTable":["list",
-            ["map","editParamKey","ADD_KEY_1","editParamValue","ADD_VAL_1"],
-            ["map","editParamKey","ADD_KEY_2","editParamValue","ADD_VAL_2"],
-            ["map","editParamKey","ADD_KEY_3","editParamValue","ADD_VAL_3"],
-            ["map","editParamKey","ADD_KEY_4","editParamValue",["macro",3]]],
-          "vtp_action":"measure",
-          "vtp_eventName":"ADD_EVENT_NAME",
-          "tag_id":7
+          "tag_id":12
         },
         {
           "function":"__funct",
