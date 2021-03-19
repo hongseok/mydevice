@@ -1,8 +1,94 @@
 {
     "version": 1,
     "logVersion": 10,
-    "glossary": {
-        "title": "example glossary",
-		"list": ["GML", "XML"]
-    }
+    "variables": [
+        {
+          "function":"__ai",
+          "instance_name":"App ID"
+        },{
+          "function":"__e",
+          "instance_name":"_event"
+        },{
+          "function":"__an",
+          "instance_name":"App Name"
+        },{
+          "function":"__e",
+          "instance_name":"MY-CUSTOM-VARIABLE-1"
+        },{
+          "function":"__e",
+          "instance_name":"Event Name"
+        },{
+          "function":"__av",
+          "instance_name":"App Version Code"
+        },{
+          "function":"__fup",
+          "instance_name":"MY-CUSTOM-VARIABLE-2",
+          "vtp_setDefaultValue":false,
+          "vtp_key":"USER-PROPERTY-KEY-1"
+        },{
+          "function":"__dn",
+          "instance_name":"MY-CUSTOM-VARIABLE-3"
+        }
+    ],
+    "tags": [
+        {
+          "function":"__fm",
+          "consent":["list"],
+          "once_per_event":true,
+          "vtp_dropParamTable":["list",["map","dropParamKey","DROP_KEY_1"]],
+          "vtp_overrideEventName":"MODIFY_EVENT_NAME",
+          "vtp_editParamTable":["list",
+            ["map","editParamKey","ADD_KEY_1","editParamValue","ADD_VALUE_1"],
+            ["map","editParamKey",["macro",2],"editParamValue","ADD_VALUE_2"],
+            ["map","editParamKey","ADD_KEY_3","editParamValue",["macro",3]]],
+          "vtp_action":"filter",
+          "tag_id":4
+        },
+        {
+          "function":"__fm",
+          "once_per_event":true,
+          "vtp_mergeEventParameters":false,
+          "vtp_editParamTable":["list",
+            ["map","editParamKey","ADD_KEY_1","editParamValue","ADD_VAL_1"],
+            ["map","editParamKey","ADD_KEY_2","editParamValue","ADD_VAL_2"],
+            ["map","editParamKey","ADD_KEY_3","editParamValue","ADD_VAL_3"],
+            ["map","editParamKey","ADD_KEY_4","editParamValue",["macro",3]]],
+          "vtp_action":"measure",
+          "vtp_eventName":"ADD_EVENT_NAME",
+          "tag_id":7
+        },
+        {
+          "function":"__funct",
+          "consent":["list"],
+          "once_per_event":true,
+          "vtp_functionArgument":["list",
+            ["map","key","ARG_1","value","VAL_1"],
+            ["map","key","ARG_2","value",["macro",4]]],
+          "vtp_classPath":"MyCustomFunctioClass",
+          "tag_id":10
+        }
+    ],
+    "triggers": [
+        {
+          "function":"_cn",
+          "arg0":["macro",0],
+          "arg1":"TRIGGER-APP-ID"
+        },{
+          "function":"_eq",
+          "arg0":["macro",1],
+          "arg1":"app_update"
+        },{
+          "function":"_cn",
+          "arg0":["macro",4],
+          "arg1":"CUSTOM-TRIGGER-EVENTNAME"
+        },{
+          "function":"_cn",
+          "arg0":["macro",5],
+          "arg1":"1.2.3"
+        },{
+          "function":"_eq",
+          "arg0":["macro",1],
+          "arg1":"first_open"
+        }
+    ]
 }
