@@ -1,78 +1,183 @@
 {
     "version": 1,
-    "logVersion": 11,
+    "logVersion": 13,
+    "containerId": "ABCXYZ123",
     "variables": [
         {
-          "function":"__ai",
-          "instance_name":"App ID"
+            "function":"__c",
+            "instance_name":"0 - ACEAppName",
+            "vtp_value":"NTagManager-ACE-APP"
         },{
-          "function":"__e",
-          "instance_name":"_event"
+            "function":"__e",
+            "instance_name":"1 - Event Name"
         },{
-          "function":"__an",
-          "instance_name":"App Name"
+            "function":"__md",
+            "instance_name":"2 - EventParameter - Screen",
+            "vtp_setDefaultValue":false,
+            "vtp_key":"screen"
         },{
-          "function":"__e",
-          "instance_name":"MY-CUSTOM-VARIABLE-1"
+            "function":"__md",
+            "instance_name":"3 - EventParameter - Category",
+            "vtp_setDefaultValue":false,
+            "vtp_key":"category"
         },{
-          "function":"__e",
-          "instance_name":"Event Name"
+            "function":"__md",
+            "instance_name":"4 - EventParameter - Action",
+            "vtp_setDefaultValue":false,
+            "vtp_key":"action"
         },{
-          "function":"__av",
-          "instance_name":"App Version Code"
+            "function":"__md",
+            "instance_name":"5 - EventParameter - Value",
+            "vtp_setDefaultValue":false,
+            "vtp_key":"value"
         },{
-          "function":"__fup",
-          "instance_name":"MY-CUSTOM-VARIABLE-2",
-          "vtp_setDefaultValue":false,
-          "vtp_key":"USER-PROPERTY-KEY-1"
+            "function":"__md",
+            "instance_name":"6 - EventParameter - TimeValue",
+            "vtp_setDefaultValue":false,
+            "vtp_key":"time"
         },{
-          "function":"__dn",
-          "instance_name":"MY-CUSTOM-VARIABLE-3"
+            "function":"__md",
+            "instance_name":"7 - EventParameter - CampaignName",
+            "vtp_setDefaultValue":false,
+            "vtp_key":"name"
+        },{
+            "function":"__md",
+            "instance_name":"8 - EventParameter - CampaignSource",
+            "vtp_setDefaultValue":false,
+            "vtp_key":"source"
+        },{
+            "function":"__md",
+            "instance_name":"9 - EventParameter - CampaignMedia",
+            "vtp_setDefaultValue":false,
+            "vtp_key":"media"
+        },{
+            "function":"__rnd",
+            "instance_name":"10 - Random Number"
+        },{
+            "function":"__idfv",
+            "instance_name":"11 - IDFV"
+        },{
+            "function":"__ov",
+            "instance_name":"12 - OS Version"
         }
     ],
     "tags": [
         {
-          "type": "ace",
-          "ace_serverUrl": "",
-          "ace_appName": "",
-          "ace_useDeviceId": true,
-          "ace_useBundleShoreVersion": true,
-          "function":"__adj",
-          "once_per_event":true,
-          "tag_id":12
-        },
-        {
-          "function":"__funct",
-          "consent":["list"],
-          "once_per_event":true,
-          "vtp_functionArgument":["list",
-            ["map","key","ARG_1","value","VAL_1"],
-            ["map","key","ARG_2","value",["macro",4]]],
-          "vtp_classPath":"MyCustomFunctioClass",
-          "tag_id":10
-        }
+            "function":"__ace",
+            "vtp_aceEventType": "INIT",
+            "vtp_aceServerUrl": "http://alpha-ace.naver.com",
+            "vtp_aceAppName": ["macro",0],
+            "vtp_useBundleShortVersion": true,
+            "tag_id":0
+        },{
+            "function":"__ace",
+            "vtp_aceEventType": "SITE",
+            "vtp_aceParamScreen": ["macro",2],
+            "tag_id":1
+        },{
+            "function":"__ace",
+            "vtp_aceEventType": "EVENT",
+            "vtp_aceParamScreen": ["macro",2],
+            "vtp_aceParamCategory": ["macro",3],
+            "vtp_aceParamAction": ["macro",4],
+            "vtp_aceParamValue": ["macro",10],
+            "tag_id":2
+        },{
+            "function":"__ace",
+            "vtp_aceEventType": "TIMING",
+            "vtp_aceParamScreen": ["macro",2],
+            "vtp_aceParamCategory": ["macro",3],
+            "vtp_aceParamAction": ["macro",4],
+            "vtp_aceParamTime": ["macro",6],
+            "tag_id":3
+        }, {
+            "function":"__ace",
+            "vtp_aceEventType": "CAMPAIGN",
+            "vtp_aceParamScreen": ["macro",2],
+            "vtp_aceParamCampaignName": ["macro",7],
+            "vtp_aceParamCampaignSource": ["macro",8],
+            "vtp_aceParamCampaignMedia": ["macro",9],
+            "vtp_aceParamValue": ["macro",11],
+            "tag_id":4
+        },{
+            "function":"__ace",
+            "vtp_aceEventType": "EXCEPTION",
+            "vtp_aceParamScreen": ["macro",2],
+            "vtp_aceParamCategory": ["macro",3],
+            "vtp_aceParamAction": ["macro",4],
+            "vtp_aceParamValue": ["macro",12],
+            "tag_id":5
+        },{
+            "function":"__ntracker",
+            "once_per_event":true,
+            "vtp_action":"block",
+            "tag_id":6
+        },{
+            "function":"__ntracker",
+            "once_per_event":true,
+            "vtp_dropParamTable":["list",["map","dropParamKey","DropRow1"],["map","dropParamKey",["macro",1]]],
+            "vtp_overrideEventName":"modifiedNewEventName",
+            "vtp_editParamTable":["list",["map","editParamKey","AddKey1","editParamValue",["macro",2]],["map","editParamKey","AddKey2","editParamValue","Constant"]],
+            "vtp_action":"modify",
+            "tag_id":7
+        },{
+            "function":"__ntracker",
+            "once_per_event":true,
+            "vtp_mergeEventParameters":false,
+            "vtp_editParamTable":["list",["map","editParamKey","AddKey1","editParamValue","AddVal1"]],
+            "vtp_action":"add",
+            "vtp_eventName":"AddedNewEvent",
+            "tag_id":9
+          }
     ],
     "triggers": [
         {
-          "function":"_cn",
-          "arg0":["macro",0],
-          "arg1":"TRIGGER-APP-ID"
+            "function":"_cn",
+            "arg0":["macro",1],
+            "arg1":"open"
         },{
-          "function":"_eq",
-          "arg0":["macro",1],
-          "arg1":"app_update"
+            "function":"_eq",
+            "arg0":["macro",1],
+            "arg1":"screenView"
         },{
-          "function":"_cn",
-          "arg0":["macro",4],
-          "arg1":"CUSTOM-TRIGGER-EVENTNAME"
+            "function":"_eq",
+            "arg0":["macro",1],
+            "arg1":"event"
         },{
-          "function":"_cn",
-          "arg0":["macro",5],
-          "arg1":"1.2.3"
+            "function":"_eq",
+            "arg0":["macro",1],
+            "arg1":"loadTime"
         },{
-          "function":"_eq",
-          "arg0":["macro",1],
-          "arg1":"first_open"
+            "function":"_eq",
+            "arg0":["macro",1],
+            "arg1":"campaign"
+        },{
+            "function":"_eq",
+            "arg0":["macro",1],
+            "arg1":"exception"
+        },{
+            "function":"_cn",
+            "arg0":["macro",1],
+            "arg1":"drop"
+        },{
+            "function":"_eq",
+            "arg0":["macro",1],
+            "arg1":"modifyTestEvent"
+        },{
+            "function":"_cn",
+            "arg0":["macro",1],
+            "arg1":"session_start"
         }
+    ],
+    "rules":[
+        [["if",0],["add",0]],
+        [["if",1],["add",1]],
+        [["if",2],["add",2]],
+        [["if",3],["add",3]],
+        [["if",4],["add",4]],
+        [["if",5],["add",5]],
+        [["if",6],["add",6]],
+        [["if",7],["add",7]],
+        [["if",8],["add",8]]
     ]
 }
