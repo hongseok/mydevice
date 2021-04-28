@@ -1,183 +1,151 @@
 {
-    "version": 1,
-    "logVersion": 13,
-    "containerId": "ABCXYZ123",
-    "variables": [
+    "container": "ios-container",
+    "kind": "ios",
+    "version": 4,
+    "name": "v3",
+    "description": "v3",
+    "triggers": [
         {
-            "function":"__c",
-            "instance_name":"0 - ACEAppName",
-            "vtp_value":"NTagManager-ACE-APP"
-        },{
-            "function":"__e",
-            "instance_name":"1 - Event Name"
-        },{
-            "function":"__md",
-            "instance_name":"2 - EventParameter - Screen",
-            "vtp_setDefaultValue":false,
-            "vtp_key":"screen"
-        },{
-            "function":"__md",
-            "instance_name":"3 - EventParameter - Category",
-            "vtp_setDefaultValue":false,
-            "vtp_key":"category"
-        },{
-            "function":"__md",
-            "instance_name":"4 - EventParameter - Action",
-            "vtp_setDefaultValue":false,
-            "vtp_key":"action"
-        },{
-            "function":"__md",
-            "instance_name":"5 - EventParameter - Value",
-            "vtp_setDefaultValue":false,
-            "vtp_key":"value"
-        },{
-            "function":"__md",
-            "instance_name":"6 - EventParameter - TimeValue",
-            "vtp_setDefaultValue":false,
-            "vtp_key":"time"
-        },{
-            "function":"__md",
-            "instance_name":"7 - EventParameter - CampaignName",
-            "vtp_setDefaultValue":false,
-            "vtp_key":"name"
-        },{
-            "function":"__md",
-            "instance_name":"8 - EventParameter - CampaignSource",
-            "vtp_setDefaultValue":false,
-            "vtp_key":"source"
-        },{
-            "function":"__md",
-            "instance_name":"9 - EventParameter - CampaignMedia",
-            "vtp_setDefaultValue":false,
-            "vtp_key":"media"
-        },{
-            "function":"__rnd",
-            "instance_name":"10 - Random Number"
-        },{
-            "function":"__idfv",
-            "instance_name":"11 - IDFV"
-        },{
-            "function":"__ov",
-            "instance_name":"12 - OS Version"
+            "id": "app-open-d05118e5-88fe-4368-a60e-fe603afbd5b0",
+            "name": "trigger-app-open",
+            "typeId": "app-open",
+            "parameters": {},
+            "conditions": [],
+            "createDate": "2021-04-27 17:54:10",
+            "updateDate": "2021-04-27 17:54:10"
+        },
+        {
+            "id": "custom-7bfb0efe-156b-4f36-8e7b-544e0aef9f9c",
+            "name": "event-screen-view",
+            "typeId": "custom",
+            "parameters": {},
+            "conditions": [
+                {
+                    "actual": "{{event-name}}",
+                    "comparison": "equals",
+                    "expected": "ScreenView"
+                }
+            ],
+            "createDate": "2021-04-27 17:54:35",
+            "updateDate": "2021-04-27 17:54:35"
+        },
+        {
+            "id": "custom-36fe057c-40b0-477b-80a9-32935fcbfbd4",
+            "name": "event-load-completed",
+            "typeId": "custom",
+            "parameters": {},
+            "conditions": [
+                {
+                    "actual": "{{event-name}}",
+                    "comparison": "equals",
+                    "expected": "LoadCompleted"
+                }
+            ],
+            "createDate": "2021-04-27 17:55:29",
+            "updateDate": "2021-04-27 17:55:29"
         }
     ],
     "tags": [
         {
-            "function":"__ace",
-            "vtp_aceEventType": "INIT",
-            "vtp_aceServerUrl": "http://alpha-ace.naver.com",
-            "vtp_aceAppName": ["macro",0],
-            "vtp_useBundleShortVersion": true,
-            "tag_id":0
-        },{
-            "function":"__ace",
-            "vtp_aceEventType": "SITE",
-            "vtp_aceParamScreen": ["macro",2],
-            "tag_id":1
-        },{
-            "function":"__ace",
-            "vtp_aceEventType": "EVENT",
-            "vtp_aceParamScreen": ["macro",2],
-            "vtp_aceParamCategory": ["macro",3],
-            "vtp_aceParamAction": ["macro",4],
-            "vtp_aceParamValue": ["macro",10],
-            "tag_id":2
-        },{
-            "function":"__ace",
-            "vtp_aceEventType": "TIMING",
-            "vtp_aceParamScreen": ["macro",2],
-            "vtp_aceParamCategory": ["macro",3],
-            "vtp_aceParamAction": ["macro",4],
-            "vtp_aceParamTime": ["macro",6],
-            "tag_id":3
-        }, {
-            "function":"__ace",
-            "vtp_aceEventType": "CAMPAIGN",
-            "vtp_aceParamScreen": ["macro",2],
-            "vtp_aceParamCampaignName": ["macro",7],
-            "vtp_aceParamCampaignSource": ["macro",8],
-            "vtp_aceParamCampaignMedia": ["macro",9],
-            "vtp_aceParamValue": ["macro",11],
-            "tag_id":4
-        },{
-            "function":"__ace",
-            "vtp_aceEventType": "EXCEPTION",
-            "vtp_aceParamScreen": ["macro",2],
-            "vtp_aceParamCategory": ["macro",3],
-            "vtp_aceParamAction": ["macro",4],
-            "vtp_aceParamValue": ["macro",12],
-            "tag_id":5
-        },{
-            "function":"__ntracker",
-            "once_per_event":true,
-            "vtp_action":"block",
-            "tag_id":6
-        },{
-            "function":"__ntracker",
-            "once_per_event":true,
-            "vtp_dropParamTable":["list",["map","dropParamKey","DropRow1"],["map","dropParamKey",["macro",1]]],
-            "vtp_overrideEventName":"modifiedNewEventName",
-            "vtp_editParamTable":["list",["map","editParamKey","AddKey1","editParamValue",["macro",2]],["map","editParamKey","AddKey2","editParamValue","Constant"]],
-            "vtp_action":"modify",
-            "tag_id":7
-        },{
-            "function":"__ntracker",
-            "once_per_event":true,
-            "vtp_mergeEventParameters":false,
-            "vtp_editParamTable":["list",["map","editParamKey","AddKey1","editParamValue","AddVal1"]],
-            "vtp_action":"add",
-            "vtp_eventName":"AddedNewEvent",
-            "tag_id":9
-          }
-    ],
-    "triggers": [
+            "id": "tag-app-ace-777dd0c9-19e6-456f-94bb-dce512a4f474",
+            "name": "ace-timing",
+            "typeId": "tag-app-ace",
+            "parameters": {
+                "ace_event_type": "timing",
+                "ace_parameter_screen": "ScreenName",
+                "ace_parameter_category": "Event",
+                "ace_parameter_action": "Action",
+                "ace_parameter_time": "LoadTime"
+            },
+            "fireTriggerIds": [
+                "custom-36fe057c-40b0-477b-80a9-32935fcbfbd4"
+            ],
+            "blockTriggerIds": [],
+            "fireIntervals": [],
+            "createDate": "2021-04-27 17:58:25",
+            "updateDate": "2021-04-27 17:58:25"
+        },
         {
-            "function":"_cn",
-            "arg0":["macro",1],
-            "arg1":"open"
-        },{
-            "function":"_eq",
-            "arg0":["macro",1],
-            "arg1":"screenView"
-        },{
-            "function":"_eq",
-            "arg0":["macro",1],
-            "arg1":"event"
-        },{
-            "function":"_eq",
-            "arg0":["macro",1],
-            "arg1":"loadTime"
-        },{
-            "function":"_eq",
-            "arg0":["macro",1],
-            "arg1":"campaign"
-        },{
-            "function":"_eq",
-            "arg0":["macro",1],
-            "arg1":"exception"
-        },{
-            "function":"_cn",
-            "arg0":["macro",1],
-            "arg1":"drop"
-        },{
-            "function":"_eq",
-            "arg0":["macro",1],
-            "arg1":"modifyTestEvent"
-        },{
-            "function":"_cn",
-            "arg0":["macro",1],
-            "arg1":"session_start"
+            "id": "tag-app-ace-7c5cfc76-b145-4596-b5cf-9fdf4123b55f",
+            "name": "ace-site",
+            "typeId": "tag-app-ace",
+            "parameters": {
+                "ace_event_type": "site",
+                "ace_parameter_screen": "ScreenName"
+            },
+            "fireTriggerIds": [
+                "custom-7bfb0efe-156b-4f36-8e7b-544e0aef9f9c"
+            ],
+            "blockTriggerIds": [],
+            "fireIntervals": [],
+            "createDate": "2021-04-27 17:57:53",
+            "updateDate": "2021-04-27 17:57:53"
+        },
+        {
+            "id": "tag-app-ace-48d9e2cd-5cd1-4b3f-9330-4dd623a62e1e",
+            "name": "ace-init",
+            "typeId": "tag-app-ace",
+            "parameters": {
+                "ace_event_type": "init",
+                "ace_parameter_server_url": "{{constant-d4ef8667-e86f-4079-95af-6e6b80b26094}}",
+                "useBundleShortVersion": true
+            },
+            "fireTriggerIds": [
+                "app-open-d05118e5-88fe-4368-a60e-fe603afbd5b0"
+            ],
+            "blockTriggerIds": [],
+            "fireLimit": "unlimited",
+            "fireDelay": 8,
+            "fireIntervals": [],
+            "startDate": "2021-04-01 00:00:00",
+            "endDate": "2021-12-31 23:59:59",
+            "createDate": "2021-04-27 17:57:25",
+            "updateDate": "2021-04-28 10:20:25"
         }
     ],
-    "rules":[
-        [["if",0],["add",0]],
-        [["if",1],["add",1]],
-        [["if",2],["add",2]],
-        [["if",3],["add",3]],
-        [["if",4],["add",4]],
-        [["if",5],["add",5]],
-        [["if",6],["add",6]],
-        [["if",7],["add",7]],
-        [["if",8],["add",8]]
-    ]
+    "variables": [
+        {
+            "id": "user-property-b6f67bee-cd0d-4a84-9278-eb7b3e41b825",
+            "name": "user-property-naver-userid",
+            "typeId": "user-property",
+            "parameters": {
+                "user-property-key": "naver-userid"
+            },
+            "defaultValue": "",
+            "lookupTable": [],
+            "createDate": "2021-04-27 17:52:26",
+            "updateDate": "2021-04-27 17:52:26"
+        },
+        {
+            "id": "constant-4f953c11-fb6d-404a-8b78-888f568855f4",
+            "name": "constant-hello",
+            "typeId": "constant",
+            "parameters": {
+                "constant-value": "hello-{{random-number}}"
+            },
+            "defaultValue": "",
+            "lookupTable": [],
+            "createDate": "2021-04-27 17:53:20",
+            "updateDate": "2021-04-27 17:53:20"
+        },
+        {
+            "id": "constant-d4ef8667-e86f-4079-95af-6e6b80b26094",
+            "name": "ace-server-url",
+            "typeId": "constant",
+            "parameters": {
+                "constant-value": "http://alpha-ace.naver.com"
+            },
+            "defaultValue": "",
+            "lookupTable": [],
+            "createDate": "2021-04-27 17:56:23",
+            "updateDate": "2021-04-27 17:56:23"
+        }
+    ],
+    "envDev": false,
+    "envStage": false,
+    "envReal": false,
+    "publishDate": null,
+    "publishUser": null,
+    "createDate": "2021-04-28T01:20:42.000Z",
+    "updateDate": "2021-04-28T01:20:42.000Z"
 }
